@@ -179,7 +179,7 @@ body {
   }
 
   .m-left {
-    background-color:beige;
+    background-color: white;
     width: 50%;
     position: relative;
     height: 500px;
@@ -220,29 +220,88 @@ body {
     background:url(/assets/川１.jpg) no-repeat;
     width: 50%;
     position: relative;
+    background-size: cover;
   }
 }
 
 .sora{
-  background-color: red;
-  padding-top: 200px;
-  transition: all ease-in 0.3s;
-  background-attachment: fixed;
-  background-size: cover;
-  height: 100vh;
-  position: relative;
-  width: 100%;
-  background: url(/assets/空１.png) no-repeat center;
+  height: 200px;
 }
 
 .blog-index{
-  height: 1000px;
-  background-color: blue;
+  height: 600px;
+  background-color: white;
+}
+
+.blog {
+  text-align: center;
+  top: 1%;
+  left: 38%;
+  animation-name: fadeup;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  font-size: 62px;
+  font-family: 'Train One';
+}
+.show{
+  position:relative;
+  .diaries {
+    .date {
+      position: absolute;
+      right: 0;
+      top: 0;
+      writing-mode: vertical-rl;
+    }
+  }
+}
+
+
+.title {
+  margin: 40px -52px 13px 94px;                     
+  list-style: none;
+}
+
+.post {
+  list-style: none;
+  margin: 138px -52px 13px 56px;
+  background: url(/assets/野菜３.JPEG) ;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding-bottom: calc(20% - 138px);
+  width: calc(100% - 20px);
+  position: relative;
+  width: 16%;
+  margin-right: 4%;
 }
 
 .staff-message {
   height: 1000px;                  
   background-color: beige;
+}
+
+.staff {
+  text-align: center;
+  top: 1%;
+  left: 38%;
+  animation-name: fadeup;               
+  animation-duration: 6s;               
+  animation-iteration-count: infinite;  
+  font-size: 62px;                      
+  font-family: 'Train One';    
+}
+
+.staff-img {
+  list-style: none;
+  margin: 94px -61px 13px 300px;
+  background: url(/assets/ばあちゃん.JPG);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding-bottom: calc(24% - 96px);
+  position: relative;
+  width: 33%;
+  margin-right: 4%;
 }
 
 .address {

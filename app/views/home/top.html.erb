@@ -69,15 +69,22 @@
   </div>
 </div>
 
-<div class="sora">
+<div class="message sora">
 </div>
 
 <div class= "blog-index">
   <div class= "blog-title-link">
     <h2 class= "blog" id="blog"> BLOG </h2> 
-    <ul class= "blog">
-      <li>タイトル名</li>
-      <li>タイトル名2</li>
+    <ul class="entry_list fade_list" style="text-align: center;">
+      <% Diary.all.each do |diary| %>
+        <li class="show" style="display:inline-block; width: 20%;">
+          <a href="diaries" class="diaries">
+            <%= image_tag diary.picture.variant(resize_to_limit: [100, 100]) %>
+            <p class="date"><%= diary.created_at.strftime("%Y年%m月%d日") %></p>
+            <p class="tit"><%= diary.title %></p>
+          </a>
+        </li>
+      <% end %>
     </ul>
   </div>
 </div>
@@ -86,6 +93,8 @@
   <a class= "staff" id="staff"> STAFF </a>
   <ul class= "staff-name">
     <h1>志波ばぁちゃん</h1>
+    <div class= "staff-img">
+    </div>
     <h2>リリィちゃん</h2>
   </ul>
   <ul class= "staff-intro">
