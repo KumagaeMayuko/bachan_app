@@ -1,0 +1,10 @@
+<% if model.errors.any? %>
+  <div id="validation-errors">
+    <p><%= model.errors.count %>件のエラーがあります。</p>
+    <ul class="error-messages">
+      <% model.errors.messages.each do |message| %>
+        <li class="error-message"><%= message[1][0] %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

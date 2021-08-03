@@ -6,6 +6,7 @@ class HomeController < ApplicationController
   end
 
   def create_contact
+    @diaries = Diary.all.order(created_at: :desc).last(4)
     @contact = Contact.new(
       name: params[:name],
       address: params[:address],
@@ -14,11 +15,19 @@ class HomeController < ApplicationController
       quantity: params[:quantity],
       question: params[:question]
     )
-    if @contact.save
-      ContactMailer.with(contact: @contact).thanks_mail.deliver_now
-      redirect_to root_path
+
+    respond_to do |format|
+      if @contact.save
+        # ContactMailer.with(contact: @contact).thanks_mail.deliver_now
+        format.html { redirect_to root_url(@contact), notice: 'Friend was successfully created.' }
+        format.js {flash[:notice] = 'Contact Successfully Sent !!!'}
+        format.json { render json: @contact, status: :created, location: @contact }
+      else
+        format.html { redirect_to root_url(@contact), notice: 'Friend was successfully created.' }
+        format.js
+        format.json { render json: @contact, status: :created, location: @contact }
+      end
     end
   end
-
 end
 

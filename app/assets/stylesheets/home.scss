@@ -361,5 +361,25 @@ body {
 
 
   /* お問い合わせ 終了 */
+
+  /* フラッシュ / エラー メッセージ 開始 */
+  .flash-message {
+    border: solid 1px green;
+    display: inline-block;
+    padding: 30px;
+    font-size: 18px;
+  }
+
+  #validation-errors {
+    border: solid 1px red;
+    display: inline-block;
+    padding: 30px;
+    font-size: 18px;
+    color: red;
+  }
+
+
+  /* フラッシュ / エラー メッセージ 終了 */
+
 }
 

@@ -1,0 +1,21 @@
+console.log("<%= @contact.errors.count %>");
+document.body.addEventListener('ajax:success', function(event) {
+  // ajax done
+  <% if @contact.errors.any? %>
+      $("#message").html("<p><%= j(render partial: 'home/error_message', locals: {model: @contact}) %></p>")
+  <% else %>
+      $("#message").html("<p><%= j(render partial: 'home/flash_message', locals: {model: @contact}) %></p>")
+  <% end %>
+});
+
+document.body.addEventListener('ajax:error', function(event) {
+  // ajax fail
+  alert('非同期通信が失敗しました')
+})
+
+document.body.addEventListener('ajax:complete', function(event) {
+  // ajax always
+})
+
+
+
