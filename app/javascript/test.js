@@ -1,11 +1,20 @@
 $(function() {
-  console.log("aaaaaaa");
-  $("p").hide();
-  $('html, body').animate({
-    scrollTop: 0
-  }, 'slow');
+  // 変数にクラスを入れる
+  var btn = $('.scroll-button-wrapper');
+  
+  //スクロールしてページトップから100に達したらボタンを表示
+  $(window).on('load scroll', function(){
+    if($(this).scrollTop() > 200) {
+      btn.addClass('active');
+    }else{
+      btn.removeClass('active');
+    }
+  });
 
-  $('li').click(function(){
-    $(this).css('color', 'red');
+  //スクロールしてトップへ戻る
+  btn.on('click',function () {
+    $('body,html').animate({
+      scrollTop: 0
+    });
   });
 });

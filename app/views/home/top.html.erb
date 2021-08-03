@@ -4,18 +4,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
-<div class="fixed">
+
+<div id='home'>
+  <div class='scroll-button-wrapper'>
+    <p class="button">TOP</p>
+  </div>
+
   <div class= "first-view">
     <div class="back back-left">
       <div class= "header-logo">
         <h1>志波ばぁちゃん家の柚子ごしょう</h1>
       </div>
-      <div class="left-exp">
-        <p>九重連山を水源とした筑後川</p>
-        <p>農業を中心として栄えた豊かな土壌</p>
-        <p>無添加・完全無農薬の柚子ごしょう</p>
-        <p>田舎の水と土で育った柚子を使用</p>
-      </div>
+      <ul class="left-exp exp">
+        <li>九重連山を水源とした筑後川</li>
+        <li>農業を中心として栄えた豊かな土壌</li>
+        <li>無添加・完全無農薬の柚子ごしょう</li>
+        <li>田舎の水と土で育った柚子を使用</li>
+      </ul>
     </div>
 
     <div class= "back back-center">
@@ -23,9 +28,7 @@
         <ul class= "about">
           <a href="#about" style="text-decoration:none;">about</a>
           <a href="#menu" style="text-decoration:none;">menu</a>
-          <a href="#home" style="text-decoration:none;">BLOG</a>
-          <a href="#home" style="text-decoration:none;">STAFF</a>
-          <a href="#home" style="text-decoration:none;">address</a>
+          <a href="#blog" style="text-decoration:none;">BLOG</a>
         </ul>
       </div>
       <div class="album">
@@ -43,7 +46,7 @@
   <div class= "message">
     <div class= "about-message">
       <h2 id="about">ABOUT</h2>
-      <ul class= "about-exp">
+      <ul class= "about-exp exp">
         <li>水、緑、空気の豊かな自然</li>
         <li>九州一の大河である筑後川に恵まれ</li>
         <li>旬の食材の宝庫で育った柚子を使用</li>
@@ -51,40 +54,57 @@
       </ul>
     </div>
   </div>
-</div>
 
-<div class="menu-page">
-  <div class="m m-left">
-    <h2 class= "menu" id="menu"> MENU </h2>
-    <div class="portrait">
-      <img src="/assets/柚子ごしょう４.png">
+  <div class="menu-page">
+      <h2 class= "menu" id="menu"> MENU </h2>
+      <div class="portrait">
+        <img src="/assets/柚子ごしょう４.png">
+      </div>
+      <ul>
+        <li>柚子ごしょう 500円/1個</li>
+      </ul>
+  </div>
+
+  <div class="message sora">
+  </div>
+
+  <div class= "blog">
+    <h2 class= "blog-title" id="blog"> BLOG </h2>
+    <div class= "blog-block">
+      <ul class="entry_list fade_list" style="text-align: center;">
+        <% @diaries.each do |diary| %>
+          <li class="show" style="display:inline-block; width: 20%;">
+            <%= link_to diary, class:"diaries" do %>
+              <%= image_tag diary.picture.variant(resize_to_limit: [250, 250]) %>
+              <p class="date"><%= diary.created_at.strftime("%Y年%m月%d日") %></p>
+              <p class="tit"><%= diary.title %></p>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
     </div>
-    <ul>
-      <li>柚子ごしょう</li>
-      <li>500円/1個</li>
-    </ul>
   </div>
-  <div class="m m-right">
-  </div>
-</div>
 
-<div class="message sora">
-</div>
-
-<div class= "blog-index">
-  <div class= "blog-title-link">
-    <h2 class= "blog" id="blog"> BLOG </h2> 
-    <ul class="entry_list fade_list" style="text-align: center;">
-      <% Diary.all.each do |diary| %>
-        <li class="show" style="display:inline-block; width: 20%;">
-          <a href="diaries" class="diaries">
-            <%= image_tag diary.picture.variant(resize_to_limit: [100, 100]) %>
-            <p class="date"><%= diary.created_at.strftime("%Y年%m月%d日") %></p>
-            <p class="tit"><%= diary.title %></p>
-          </a>
-        </li>
+  <div class='contact'>
+    <h2 class='contact-title'>お問い合わせフォーム</h2>
+    <div class='form-area'>
+      <%= form_with url:create_contact_path do |f| %>
+        <%= f.label :name, "お名前" %>
+        <%= f.text_field :name %>
+        <%= f.label :address, "住所" %>
+        <%= f.text_field :address %>
+        <%= f.label :email, "メールアドレス" %>
+        <%= f.email_field :email %>
+        <%= f.label :phone, "電話番号" %>
+        <%= f.text_field :phone %>
+        <%= f.label :quantity, "個数" %>
+        <%= f.number_field :quantity %>
+        <%= f.label :question, "ご質問など" %>
+        <%= f.text_area :question %>
+        <div class='action'>
+          <%= f.submit "送信" %>
+        </div>
       <% end %>
-    </ul>
+    </div>
   </div>
 </div>
-

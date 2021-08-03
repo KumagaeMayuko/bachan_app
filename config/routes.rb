@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  root to: "home#top"
   resources :diaries
-  get "/" => "home#top"
+  post 'create_contact' => "home#create_contact"
 end
