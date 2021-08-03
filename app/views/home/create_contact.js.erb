@@ -1,4 +1,3 @@
-console.log("<%= @contact.errors.count %>");
 document.body.addEventListener('ajax:success', function(event) {
   // ajax done
   <% if @contact.errors.any? %>

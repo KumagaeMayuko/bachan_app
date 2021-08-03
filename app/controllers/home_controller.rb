@@ -20,7 +20,7 @@ class HomeController < ApplicationController
       if @contact.save
         # ContactMailer.with(contact: @contact).thanks_mail.deliver_now
         format.html { redirect_to root_url(@contact), notice: 'Friend was successfully created.' }
-        format.js {flash[:notice] = 'Contact Successfully Sent !!!'}
+        format.js {flash[:notice] = 'お問い合わせが送信されました'}
         format.json { render json: @contact, status: :created, location: @contact }
       else
         format.html { redirect_to root_url(@contact), notice: 'Friend was successfully created.' }
