@@ -9,11 +9,25 @@ body {
   margin:0 !important;
 }
 #home {
+  h1,h2{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: .1em;
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+  }
   padding-bottom: 300px;
+  ul.exp{
+    text-align: right;
+  }
   ul.exp li {
-    font-size: 20px;
+    font-size: 16px;
     line-height: 30px;
     list-style-type: none;
+    letter-spacing: 4px;
+    font-family: 'Noto Sans JP', sans-serif;
   }
   .first-view {
     height: 1040px;
@@ -27,20 +41,11 @@ body {
       background-color: white;
       position:relative;
     }
-
-    .header-logo h1{
-      font-family: 'Train One';
-      font-size: 33px;
-      font-weight: 300;
-      text-align: center;
-      margin-top: 40px;
-    }
-
     .left-exp{
       color: #4e4b4b;
       position:absolute;
       bottom: 3%;
-      right:5%;
+      right:12%;
     }
 
     .back-center {
@@ -77,6 +82,9 @@ body {
           opacity: 0;
           visibility: hidden;
           transition: .3s;
+        }
+        a:hover{
+          background-color: transparent;
         }
         a:hover::after {
           bottom: -4px;
@@ -148,15 +156,6 @@ body {
     position: relative;
     width: 100%;
 
-    h2{
-      padding-left: 37px;
-      animation-duration: 3s;
-      text-align: center;
-      font-size: 62px;
-      font-family: 'Train One';
-    }
-
-
     .about-message {
       color: white;
       text-align: center;
@@ -170,27 +169,27 @@ body {
       padding:0;
       .about-exp{
         list-style: none;
+        font-size: 16px;
+        padding-left: inherit;
+        line-height: 32px;
+        font-family: 'Noto Sans JP', sans-serif;
       }
     }
   }
 
   .menu-page {
     height: 500px;
-    position:relative;
-    .menu{
-      text-align: center;
-      font-size: 62px;
-      font-family: 'Train One';
-    }
-
+    padding: 200px;
     .portrait {
-      height: 500px;
-      position: absolute;
+      text-align: center;
       img {
         display: block;
         margin-left: auto;
         margin-right: auto;
         width: 20%;
+      }
+      p {
+        font-size: 24px;
       }
     }
 
@@ -216,21 +215,19 @@ body {
 
   .blog {
     text-align: center;
-    top: 1%;
-    left: 38%;
-    font-size: 62px;
-    font-family: 'Train One';
-    .blog-title {
-      font-size: 62px;
-    }
+    padding: 200px;
     .blog-block {
       padding-top: 100px;
       .show{
         position:relative;
+        display: inline-block;
+        min-width: 330px;
+        max-width: 350px;
         a.diaries {
+          text-decoration:none;
           &:hover {
-            color:black;
             background-color: white;
+            color: #4BBE92;
           }
           img {
             width: 200px;
@@ -244,8 +241,12 @@ body {
           .date {
             position: absolute;
             right: 0;
-            top: 0;
+            top: 14px;
             transform: rotate(90deg);
+            font-family: 'Lato', sans-serif;
+            font-size: 11px;
+            font-style: italic;
+            font-weight: 700;
           }
         }
       }
