@@ -30,10 +30,12 @@ body {
     font-family: 'Noto Sans JP', sans-serif;
   }
   .first-view {
-    height: 1040px;
+    height: auto;
+    overflow: auto;
+    display: flex;
     .back {
       float: left;
-      height: 1030px;
+      height: auto;
     }
 
     .back-left {
@@ -53,6 +55,11 @@ body {
       background-color: antiquewhite;
       text-align: center;
       position:relative;
+      &:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
       .header{
         display: flex;
         font-size: 25px;
@@ -97,7 +104,6 @@ body {
     .album {
       margin: auto;
       background-color: white;
-      position: absolute;
     }
 
     .album img {
