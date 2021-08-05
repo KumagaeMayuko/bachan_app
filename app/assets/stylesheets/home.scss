@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-
 /************************* PC 開始 *************************/
 @media screen and (min-width:768px) {
   /* 全体用 開始 */
@@ -44,8 +43,7 @@
         background-color: white;
         position:relative;
       }
-      .left-exp{
-        color: #4e4b4b;
+      .left-exp{  color: #4e4b4b;
         position:absolute;
         bottom: 3%;
         right:12%;
@@ -187,16 +185,22 @@
     .menu-page {
       height: 500px;
       padding: 200px;
+      background-image: url("/assets/happa.PNG");
+      background-repeat: no-repeat;
+      background-position: top;
+      background-size: contain;
       .portrait {
         text-align: center;
         img {
           display: block;
+          padding-top: 34px;
           margin-left: auto;
           margin-right: auto;
           width: 20%;
         }
         p {
           font-size: 24px;
+          padding-top: 34px;
         }
       }
 
@@ -265,7 +269,9 @@
         opacity: 0;
         transform: translateY(20px);
       }
-      to {
+      p {
+        font-size: 24px;
+        padding-top: 45px;
         opacity: 1;
         transform: translateY(0);
       }
@@ -362,6 +368,11 @@
     .contact {
       text-align: center;
       margin-top: 200px;
+      background-image: url("/assets/happa.PNG");
+      background-repeat: no-repeat;
+      background-position: top;
+      background-size: 60%;
+      padding-bottom: 206px;
       .form-area {
         line-height: 40px;
       }

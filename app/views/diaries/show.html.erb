@@ -1,20 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div id="diaries-show">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @diary.title %>
-</p>
+  <div class='blog'>
+    <h1>BLOG</h1>
+  </div>
 
-<p>
-  <strong>Content:</strong>
-  <%= @diary.content %>
-</p>
+  <div class='date'>
+    <p><%= @diary.created_at.strftime("%Y.%m.%d") %></p>
+  </div>
 
-<p>
-  <strong>Picture:</strong>
-  <%= link_to @diary.picture.filename, @diary.picture if @diary.picture.attached? %>
-  <%= image_tag @diary.picture %>
-</p>
+  <div class='title'>
+    <p><%= @diary.title %></p>
+  </div>
 
-<%= link_to 'Edit', edit_diary_path(@diary) %> |
-<%= link_to 'Back', diaries_path %>
+  <div class='content'>
+    <p><%= @diary.content %></p>
+  </div>
+
+  <div class='picture'>
+    <p>
+    <%= image_tag @diary.picture,class:'img'%>
+    </p>
+  </div>
+
+  <div class='back'>
+    <p>
+    < <%= link_to 'home', root_path %> |
+    </p>
+  </div>
+</
